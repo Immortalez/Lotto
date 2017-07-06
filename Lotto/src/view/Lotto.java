@@ -19,6 +19,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextArea;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class Lotto extends JFrame {
 
@@ -62,7 +65,6 @@ public class Lotto extends JFrame {
 		});
 	}
 
-	@SuppressWarnings("rawtypes")
 	private void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 995, 281);
@@ -147,6 +149,15 @@ public class Lotto extends JFrame {
 		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Duże Lotto"}));
 		comboBox.setBounds(853, 208, 125, 27);
 		contentPane.add(comboBox);
+		
+		JTextArea txtrAuthorTomaszGorol = new JTextArea();
+		txtrAuthorTomaszGorol.setEditable(false);
+		txtrAuthorTomaszGorol.setForeground(Color.LIGHT_GRAY);
+		txtrAuthorTomaszGorol.setBackground(SystemColor.window);
+		txtrAuthorTomaszGorol.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		txtrAuthorTomaszGorol.setText("Author: Tomasz Gorol\nGithub: https://github.com/Immortalez\nRelease: v1.0 – 6 July 2017");
+		txtrAuthorTomaszGorol.setBounds(13, 206, 263, 33);
+		contentPane.add(txtrAuthorTomaszGorol);
 	}
 
 	private void losowanie(){
