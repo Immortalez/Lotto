@@ -34,12 +34,14 @@ public class Lotto extends JFrame {
 	private JLabel lblLiczba5;
 	private JLabel lblLiczba6;
 	private JButton btnLosowanie;
+	private JButton btnSprawdz;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					Lotto frame = new Lotto();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -61,6 +63,13 @@ public class Lotto extends JFrame {
 		btnLosowanie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				losowanie();
+			}
+		});
+		btnSprawdz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Sprawdz sprawdz = new Sprawdz();
+				sprawdz.setLocationRelativeTo(null);
+				sprawdz.setVisible(true);
 			}
 		});
 	}
@@ -141,7 +150,7 @@ public class Lotto extends JFrame {
 		
 		btnLosowanie = new JButton("LOSOWANIE");
 		btnLosowanie.setFont(new Font("Lucida Grande", Font.BOLD, 23));
-		btnLosowanie.setBounds(324, 196, 346, 43);
+		btnLosowanie.setBounds(314, 196, 175, 43);
 		contentPane.add(btnLosowanie);
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
@@ -155,9 +164,14 @@ public class Lotto extends JFrame {
 		txtrAuthorTomaszGorol.setForeground(Color.LIGHT_GRAY);
 		txtrAuthorTomaszGorol.setBackground(SystemColor.window);
 		txtrAuthorTomaszGorol.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
-		txtrAuthorTomaszGorol.setText("Author: Tomasz Gorol\nGithub: https://github.com/Immortalez\nRelease: v1.0 – 6 July 2017");
+		txtrAuthorTomaszGorol.setText("Author: Tomasz Gorol\nGithub: https://github.com/Immortalez\nRelease: v1.1 – 7 July 2017");
 		txtrAuthorTomaszGorol.setBounds(13, 206, 263, 33);
 		contentPane.add(txtrAuthorTomaszGorol);
+		
+		btnSprawdz = new JButton("SPRAWDŹ");
+		btnSprawdz.setFont(new Font("Lucida Grande", Font.BOLD, 23));
+		btnSprawdz.setBounds(502, 196, 175, 43);
+		contentPane.add(btnSprawdz);
 	}
 
 	private void losowanie(){
